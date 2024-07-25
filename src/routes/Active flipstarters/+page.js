@@ -15,6 +15,7 @@ export async function load({ fetch }) {
       console.error("Error loading campaigns:", error);
       return {
         campaigns: []
+        
       };
     }
   }
