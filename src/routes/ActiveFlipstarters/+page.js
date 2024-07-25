@@ -1,5 +1,6 @@
 // src/routes/+page.js
-export async function load({ fetch }) {
+// @ts-ignore
+export  let load = async ({ fetch }) => {
     const url = "https://flipbackend.bitcoincash.network/v1/flipstarter/";
     try {
       const response = await fetch(url);
@@ -14,7 +15,7 @@ export async function load({ fetch }) {
     } catch (error) {
       console.error("Error loading campaigns:", error);
       return {
-        campaigns: []
+        campaigns: [],
         
       };
     }

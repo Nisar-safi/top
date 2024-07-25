@@ -7,9 +7,9 @@
 </script>
 <div class="center">
   <a href="/Flipstarters">Flipstarters</a>
-  <a href="/Active flipstarters">Active flipstarters</a>
-  <a href="/Completed flipstarters">Completed flipstarters</a>
-  <a href="/About this page">About this page</a>
+  <a href="/ActiveFlipstarters">Active Flipstarters</a>
+  <a href="/CompletedFlipstarters">Completed Flipstarters</a>
+  <a href="/AboutThisPage">About This Page</a>
 </div>
 
 <slot></slot>
