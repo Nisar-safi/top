@@ -1,1 +1,0 @@
-<h1 class="m-6"> hello this one is for pratice </h1>
