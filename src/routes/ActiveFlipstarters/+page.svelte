@@ -11,6 +11,9 @@
   function toggleDescription() {
     showFullDescription = !showFullDescription;
   }
+  function slugify(text) {
+    return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+  }
 </script>
 
 <div class="columns is-multiline">
@@ -27,7 +30,7 @@
               <div class="content">
                 <h1 class="title is-4">
                   <a
-                    href="/ActiveFlipstarter/{encodeURIComponent(campaign.title)}"
+                  href={`/item/${slugify(campaign.title)}`}
                     data-sveltekit-prefetch
                   >
                     <span class="icon"><i class="fas fa-heading"></i></span
