@@ -22,9 +22,13 @@
 <div class="card" style="margin: 1rem;">
   <div class="card-content">
     <div class="content">
+      <a href={`/shop/${campaignz.title}`} data-sveltekit-prefetch>
       <h1 class="title is-4">
-        <span class="icon"><i class="fas fa-heading"></i></span>{title.substring(1,20)}
+        <span class="icon"><i class="fas fa-heading"></i></span
+        >{title.substring(1, 20)}
+        
       </h1>
+    </a>
       <p>
         <strong>Status:</strong>
         <span class="icon"><i class="fas fa-info-circle"></i></span>{status}
