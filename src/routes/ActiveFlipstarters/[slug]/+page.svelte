@@ -16,7 +16,7 @@
 <div class="columns is-multiline">
   
     
-        <div class="column is-half">
+        <div class="column is-full">
           <div class="card" style="margin: 1rem;">
             <div class="card-content">
               <div class="content">
@@ -67,7 +67,7 @@
                 <p>
                   <span class="icon"><i class="fas fa-coins"></i></span>
                   Requesting:
-                  <strong>{campaign.amount / 100000000} BCH</strong>
+                  <strong> {campaign.amount/1000000000} BCH</strong>
                 </p>
                 <div>
                   <strong

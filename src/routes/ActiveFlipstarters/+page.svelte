@@ -28,7 +28,7 @@
                     data-sveltekit-prefetch
                   >
                     <span class="icon"><i class="fas fa-heading"></i></span
-                    >{campaign.title.substring(0, 20)}
+                    >{campaign.title.substring(0, 15)}
                   </a>
                 </h1>
 
@@ -49,7 +49,7 @@
                 <p>
                   <span class="icon"><i class="fas fa-coins"></i></span>
                   Requesting:
-                  <strong>{campaign.amount / 100000000} BCH</strong>
+                  <strong> {campaign.amount/1000000000} BCH</strong>
                 </p>
                 <div>
                   <strong
