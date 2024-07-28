@@ -4,13 +4,7 @@
   let { campaigns } = data;
   console.log("Campaigns:", campaigns);
 
-  // State variable to control the toggle
-  let showFullDescription = false;
 
-  // Function to toggle the state
-  function toggleDescription() {
-    showFullDescription = !showFullDescription;
-  }
   function slugify(text) {
     return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
   }
@@ -30,11 +24,11 @@
               <div class="content">
                 <h1 class="title is-4">
                   <a
-                  href={`/item/${slugify(campaign.title)}`}
+                  href={`/ActiveFlipstarters/${slugify(campaign.title)}`}
                     data-sveltekit-prefetch
                   >
                     <span class="icon"><i class="fas fa-heading"></i></span
-                    >{campaign.title.substring(1, 20)}
+                    >{campaign.title.substring(0, 20)}
                   </a>
                 </h1>
 
@@ -49,29 +43,9 @@
                     ><i class="fas fa-hand-holding-usd"></i></span
                   >{campaign.funded_tx}
                 </p>
-                <h2 class="subtitle is-5">
-                  <span class="icon"><i class="fas fa-info"></i></span>Details
-                </h2>
-                <p>
-                  <strong>Description:</strong>
-                  <span class="icon"><i class="fas fa-align-left"></i></span>
-                  <span class={showFullDescription ? "" : "truncated"}
-                    >{campaign.description}</span
-                  >
-                </p>
-                <button
-                  class="button is-link is-light"
-                  on:click={toggleDescription}
-                >
-                  {campaign.showFullDescription ? "Show Less" : "Read More"}
-                  <span class="icon mx-1"
-                    ><i
-                      class={showFullDescription
-                        ? "fas fa-chevron-up"
-                        : "fas fa-chevron-down"}
-                    ></i></span
-                  >
-                </button>
+                
+              
+             
                 <p>
                   <span class="icon"><i class="fas fa-coins"></i></span>
                   Requesting:
@@ -144,12 +118,7 @@
 
 <style>
   /* Custom styles to handle the truncated text */
-  .truncated {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 4;
-    overflow: hidden;
-  }
+
 
   .icon {
     margin-right: 0.5rem;
