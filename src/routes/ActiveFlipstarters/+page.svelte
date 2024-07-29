@@ -83,7 +83,7 @@
                   >
                 </div>
               </div>
-              <div class="container">
+              <!-- <div class="container">
                 <div class="is-flex is-flex-direction-column">
                   {#each campaign.archives as archive}
                     <a href={archive.url} class="is-link mb-3" target="_blank"
@@ -107,7 +107,7 @@
                     </p>
                   {/each}
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>

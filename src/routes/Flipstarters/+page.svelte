@@ -1,5 +1,12 @@
-<script>
+
+  <script>
+    import { goto } from '$app/navigation';
+
+    function navigate() {
+        goto('/FormComponent');
+    }
 </script>
+
 
 <section class="section">
   <div class="columns is-centered">
@@ -17,7 +24,8 @@
           </p>
           <p>Do you know of a flipstarter that is not listed here?</p>
 
-          <button class="button is-primary">Submit a flipstarter </button>
+ 
+          <button class="button is-primary" on:click={navigate}>Submit a flipstarter </button>
 
           <div class="mt-5">
             <p>
