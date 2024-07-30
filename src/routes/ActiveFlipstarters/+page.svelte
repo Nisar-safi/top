@@ -27,7 +27,7 @@
                   href={`/ActiveFlipstarters/${slugify(campaign.title)}`}
                     data-sveltekit-prefetch
                   >
-                    <span class="icon"><i class="fas fa-heading"></i></span
+                    <span class="icon"><i class="fas fa-fire mr-5 "></i></span
                     >{campaign.title.substring(0, 15)}
                   </a>
                 </h1>
@@ -37,13 +37,7 @@
                   <span class="icon"><i class="fas fa-info-circle"></i></span
                   >{campaign.status}
                 </p>
-                <p>
-                  <strong>Funded Transaction:</strong>
-                  <span class="icon"
-                    ><i class="fas fa-hand-holding-usd"></i></span
-                  >{campaign.funded_tx}
-                </p>
-                
+             
               
              
                 <p>
@@ -83,7 +77,7 @@
                   >
                 </div>
               </div>
-              <!-- <div class="container">
+              <div class="container">
                 <div class="is-flex is-flex-direction-column">
                   {#each campaign.archives as archive}
                     <a href={archive.url} class="is-link mb-3" target="_blank"
@@ -107,7 +101,7 @@
                     </p>
                   {/each}
                 </div>
-              </div> -->
+              </div>
             </div>
           </div>
         </div>

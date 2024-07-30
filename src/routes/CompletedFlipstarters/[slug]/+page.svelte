@@ -4,24 +4,16 @@
   console.log('data is comming from params ', data);
 
 
-  // State variable to control the toggle
-  let showFullDescription = false;
-
-  // Function to toggle the state
-  function toggleDescription() {
-    showFullDescription = !showFullDescription;
-  }
-
 
 </script>
 
 <div class="card ">
-<header class="card-header">
-  <p class="card-header-title is-centered">
+
+  <p class="card-header-title ">
     <span class="icon"><i class="fas fa-fire"></i></span>
-    {campaign.title.substring(1,20)}
+    {campaign.title}
   </p>
-</header>
+
 <div class="card-content is-centered column is-full ">
   <div class="content">
     <p>
@@ -34,25 +26,21 @@
       <strong
         ><span class="icon"><i class="fas fa-align-left"></i></span> Description:</strong
       >
-      <span class={showFullDescription ? "" : "truncated"}>{campaign.description}</span
-      >
+     {campaign.description}
     </p>
-    <button class="button is-link is-light" on:click={toggleDescription}>
-      {showFullDescription ? "Show Less" : "Read More"}
-      <span class="icon mx-1"
-        ><i
-          class={showFullDescription
-            ? "fas fa-chevron-up"
-            : "fas fa-chevron-down"}
-        ></i></span
-      >
-    </button>
-    <p>
+   
+    <div>
       <strong
-        ><span class="icon"><i class="fas fa-tags"></i></span> Category:</strong
+        ><span class="icon"><i class="fas fa-tags"></i></span> category:</strong
       >
-      {campaign.category.join(", ")}
-    </p>
+      {#each campaign.category as Categories}
+        <span class="tag is-info m-3"
+          ><span class="icon"><i class="fas fa-tag"></i></span>
+          {Categories}</span
+        >
+      {/each}
+   
+    </div>
     <p>
       <strong
         ><span class="icon"><i class="fas fa-info-circle"></i></span> Status:</strong
@@ -79,7 +67,7 @@
     </p>
     <div class="buttons mt-3">
       {#each campaign.announcement as announ}
-        <a class="button is-link mb-3" href={announ.url} target="_blank"
+        <a class="button is-link mb-3" href={announ} target="_blank"
           ><span class="icon mr-1"><i class="fas fa-bullhorn"></i></span> View
           Announcement</a
         >
@@ -116,12 +104,7 @@
 }
 
 /* Custom styles to handle the truncated text */
-.truncated {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3; /* Number of lines to show */
-  overflow: hidden;
-}
+
 
 /* Align icon to the left */
 .icon {
