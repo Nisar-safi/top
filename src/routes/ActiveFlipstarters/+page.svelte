@@ -56,7 +56,8 @@
                     >
                   {/each}
                 </div>
-                <div class="buttons mt-3">
+
+                <!-- <div class="buttons mt-3">
                   {#each campaign.announcements as announcement}
                     <a
                       class="button is-link mb-3"
@@ -75,7 +76,10 @@
                       ><i class="fas fa-external-link-alt"></i></span
                     > visit Campaign</a
                   >
-                </div>
+                </div> -->
+
+
+
               </div>
               <div class="container">
                 <div class="is-flex is-flex-direction-column">
@@ -86,9 +90,10 @@
                     >
                   {/each}
                 </div>
-                <div>
+                
+                <div class="is-flex">
                   <strong
-                    ><span class="icon"><i class="fas fa-images"></i></span> Screenshots:</strong
+                    ><span class="icon"><i class="fas fa-images"></i></span> screenshots:</strong
                   >
                   {#each campaign.screenshots as screenshot}
                     <p>
@@ -96,7 +101,7 @@
                         href={screenshot.image}
                         class="is-link mb-3"
                         target="_blank"
-                        ><span class="icon"><i class="fas fa-image"></i></span> Screenshot</a
+                        ><span class="icon"><i class="fas fa-image"></i></span>#1</a
                       >
                     </p>
                   {/each}

@@ -119,9 +119,9 @@
           « Prev
         </button>
         <ul class="pagination-list">
-          <li><button on:click={() => goToPage(1)}>1</button></li>
+          <li><button on:click={() => goToPage(1)}></button></li>
           {#if currentPage > 1}
-            <li><span class="pagination-ellipsis">…</span></li>
+            <li><span class="pagination-ellipsis"></span></li>
           {/if}
           {#each Array.from({ length: totalPages }, (_, i) => i + 1) as page (page)}
             {#if page > currentPage - 3 && page < currentPage + 3}
@@ -138,10 +138,10 @@
             {/if}
           {/each}
           {#if currentPage < totalPages - 2}
-            <li><span class="pagination-ellipsis">…</span></li>
+            <li><span class="pagination-ellipsis"></span></li>
           {/if}
           <li>
-            <button on:click={() => goToPage(totalPages)}>{totalPages}</button>
+            <button on:click={() => goToPage()}></button>
           </li>
         </ul>
         <button
