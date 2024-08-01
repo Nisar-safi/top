@@ -43,7 +43,7 @@
                 <p>
                   <span class="icon"><i class="fas fa-coins"></i></span>
                   Requesting:
-                  <strong> {campaign.amount/1000000000} BCH</strong>
+                  <strong> {campaign.amount/ 100000000} BCH</strong>
                 </p>
                 <div>
                   <strong

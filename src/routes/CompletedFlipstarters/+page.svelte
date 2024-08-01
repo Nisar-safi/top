@@ -62,7 +62,7 @@
                       <strong>
                         <span class="icon"><i class="fas fa-coins"></i></span> Amount:
                       </strong>
-                      {campaign.amount / 1000000000} BCH
+                      {campaign.amount} BCH
                     </p>
 
                     <div>
@@ -119,12 +119,24 @@
           « Prev
         </button>
         <ul class="pagination-list">
-          <li><button on:click={() => goToPage(1)}></button></li>
-          {#if currentPage > 1}
-            <li><span class="pagination-ellipsis"></span></li>
+          <!-- First page button -->
+          <li>
+            <button
+              class="pagination-link {currentPage === 1 ? 'is-current' : ''}"
+              on:click={() => goToPage(1)}
+            >
+              1
+            </button>
+          </li>
+
+          <!-- Ellipsis before current page if necessary -->
+          {#if currentPage > 3}
+            <li><span class="pagination-ellipsis">…</span></li>
           {/if}
+
+          <!-- Page numbers around the current page -->
           {#each Array.from({ length: totalPages }, (_, i) => i + 1) as page (page)}
-            {#if page > currentPage - 3 && page < currentPage + 3}
+            {#if page > 1 && page < totalPages && page >= currentPage - 2 && page <= currentPage + 2}
               <li>
                 <button
                   class="pagination-link {currentPage === page
@@ -137,12 +149,25 @@
               </li>
             {/if}
           {/each}
+
+          <!-- Ellipsis after current page if necessary -->
           {#if currentPage < totalPages - 2}
-            <li><span class="pagination-ellipsis"></span></li>
+            <li><span class="pagination-ellipsis">…</span></li>
           {/if}
-          <li>
-            <button on:click={() => goToPage()}></button>
-          </li>
+
+          <!-- Last page button -->
+          {#if totalPages > 1}
+            <li>
+              <button
+                class="pagination-link {currentPage === totalPages
+                  ? 'is-current'
+                  : ''}"
+                on:click={() => goToPage(totalPages)}
+              >
+                {totalPages}
+              </button>
+            </li>
+          {/if}
         </ul>
         <button
           class="pagination-next"

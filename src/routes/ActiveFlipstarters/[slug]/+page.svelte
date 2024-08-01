@@ -10,7 +10,7 @@
       <div class="card-content">
         <div class="content">
           <h1 class="title is-4">
-            <span class="icon"><i class="fas fa-heading"></i></span
+            <span class="icon"><i class="fas fa-fire mr-5"></i></span
             >{campaign.title}
           </h1>
 
@@ -35,7 +35,7 @@
           <p>
             <span class="icon"><i class="fas fa-coins"></i></span>
             Requesting:
-            <strong> {campaign.amount / 1000000000} BCH</strong>
+            <strong> {campaign.amount / 100000000} BCH</strong>
           </p>
           <div>
             <strong

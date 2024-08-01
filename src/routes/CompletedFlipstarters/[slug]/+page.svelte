@@ -3,7 +3,7 @@
   const { campaign } = data;
   console.log('data is comming from params ', data);
 
-
+let displayAmount = (1000000000).toFixed(3);
 
 </script>
 
@@ -20,7 +20,7 @@
       <strong
         ><span class="icon"><i class="fas fa-coins"></i></span> Amount:</strong
       >
-      {campaign.amount/1000000000} BCH
+      <strong> {campaign.amount} BCH</strong>
     </p>
     <p>
       <strong
