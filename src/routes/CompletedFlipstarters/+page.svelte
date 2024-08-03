@@ -3,7 +3,7 @@
 
   let { campaigns } = data;
 
-  // targeting tiltle for next page
+  // targeting title for the next page
   function slugify(text) {
     return text
       .toLowerCase()
@@ -40,9 +40,9 @@
 <main>
   <section class="section mt-6">
     <div class="container">
-      <h1 class="title has-text-centered mt-4">Project Details</h1>
+      <h1 class="title has-text-centered mt-4">Completed Flipstarters</h1>
       <div class="columns is-centered is-multiline">
-        {#each paginatedCampaigns as campaign}
+        {#each paginatedCampaigns as campaign, index (campaign)}
           {#if campaign.status === "success"}
             <div class="column is-half">
               <div class="card">
@@ -53,42 +53,37 @@
                         href={`/CompletedFlipstarters/${slugify(campaign.title)}`}
                         data-sveltekit-prefetch
                       >
-                        <span class="icon"
-                          ><i class="fas fa-fire mr-5"></i></span
-                        >{campaign.title.substring(0, 15)}
+                        <span class="icon"><i class="fas fa-fire mr-4"></i></span>
+                        {campaign.title.substring(0, 15)}
                       </a>
                     </h1>
-                    <p>
+                    <p class="mt-1">
                       <strong>
                         <span class="icon"><i class="fas fa-coins"></i></span> Amount:
                       </strong>
                       {campaign.amount} BCH
                     </p>
 
-                    <div>
-                      <strong
-                        ><span class="icon"><i class="fas fa-tags"></i></span> category:</strong
-                      >
-                      {#each campaign.category as Categories}
-                        <span class="tag is-info m-3"
-                          ><span class="icon"><i class="fas fa-tag"></i></span>
-                          {Categories}</span
-                        >
-                      {/each}
+                    <div class="container">
+                      <div class="mb-3">
+                        <strong>
+                          <span class="icon"><i class="fas fa-hashtag"></i></span> Index:
+                        </strong>
+                        <span class="ml-2">{(currentPage - 1) * itemsPerPage + index + 1}</span>
+                      </div>
+                      <p class="mt-3">
+                        <strong>
+                          <span class="icon"><i class="fas fa-info-circle"></i></span> Status:
+                        </strong>
+                        <span class="ml-2">{campaign.status}</span>
+                      </p>
                     </div>
-                    <p>
+                    
+
+                  
+                    <p class="mt-4">
                       <strong>
-                        <span class="icon"
-                          ><i class="fas fa-info-circle"></i></span
-                        > Status:
-                      </strong>
-                      {campaign.status}
-                    </p>
-                    <p>
-                      <strong>
-                        <span class="icon"
-                          ><i class="fas fa-handshake"></i></span
-                        > Transaction:
+                        <span class="icon"><i class="fas fa-handshake"></i></span> Transaction:
                       </strong>
                       <a
                         href={`https://explorer.bitcoin.com/bch/tx/${campaign.tx}`}
@@ -106,11 +101,7 @@
       </div>
 
       <!-- Pagination Controls -->
-      <nav
-        class="pagination is-centered"
-        role="navigation"
-        aria-label="pagination"
-      >
+      <nav class="pagination is-centered" role="navigation" aria-label="pagination">
         <button
           class="pagination-previous"
           on:click={() => goToPage(currentPage - 1)}
@@ -139,9 +130,7 @@
             {#if page > 1 && page < totalPages && page >= currentPage - 2 && page <= currentPage + 2}
               <li>
                 <button
-                  class="pagination-link {currentPage === page
-                    ? 'is-current'
-                    : ''}"
+                  class="pagination-link {currentPage === page ? 'is-current' : ''}"
                   on:click={() => goToPage(page)}
                 >
                   {page}
@@ -159,9 +148,7 @@
           {#if totalPages > 1}
             <li>
               <button
-                class="pagination-link {currentPage === totalPages
-                  ? 'is-current'
-                  : ''}"
+                class="pagination-link {currentPage === totalPages ? 'is-current' : ''}"
                 on:click={() => goToPage(totalPages)}
               >
                 {totalPages}
@@ -191,8 +178,5 @@
   }
   .pagination-ellipsis {
     padding: 0.5em;
-  }
-  .pagination-info {
-    margin-left: 1em;
   }
 </style>

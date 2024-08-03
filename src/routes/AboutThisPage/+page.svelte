@@ -2,7 +2,7 @@
     // You can add any necessary script here if needed
   </script>
   
-  <div class="columns is-centered mt-4">
+  <div class="columns is-centered mt-6">
     <div class="column is-two-thirds-tablet is-half-desktop center-text">
       <div class="content">
         <h1>About Flipstarters on Bitcoin Cash

@@ -4,12 +4,12 @@
   import "@fortawesome/fontawesome-free/css/all.min.css";
 </script>
 
-<div class="center">
+<nav class="center">
   <a href="/Flipstarters" class="button is-primary is-outlined">Flipstarters</a>
   <a href="/ActiveFlipstarters" class="button is-link is-outlined">Active Flipstarters</a>
   <a href="/CompletedFlipstarters" class="button is-success is-outlined">Completed Flipstarters</a>
   <a href="/AboutThisPage" class="button is-info is-outlined">About This Page</a>
-</div>
+</nav>
 
 <slot></slot>
 

@@ -25,7 +25,7 @@
           <p>Do you know of a flipstarter that is not listed here?</p>
 
  
-          <button class="button is-primary" on:click={navigate}>Submit a flipstarter </button>
+          <button class="button is-primary mt-3" on:click={navigate}>Submit a flipstarter </button>
 
           <div class="mt-5">
             <p>
