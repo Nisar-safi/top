@@ -1,4 +1,5 @@
 <script>
+  import { base } from "$app/paths"; // Import the base path
   export let data;
 
   let { campaigns } = data;
@@ -35,6 +36,13 @@
       paginatedCampaigns = getPaginatedItems(page);
     }
   }
+
+  function prependBase(url) {
+    if (!url.startsWith('http') && !url.startsWith(base)) {
+      return `${base}${url}`;
+    }
+    return url;
+  }
 </script>
 
 <main>
@@ -42,64 +50,65 @@
     <div class="container">
       <h1 class="title has-text-centered mt-4">Completed Flipstarters</h1>
       <div class="columns is-centered is-multiline">
-        {#each paginatedCampaigns as campaign, index (campaign)}
-          {#if campaign.status === "success"}
-            <div class="column is-half">
-              <div class="card">
-                <div class="card-content">
-                  <div class="content">
-                    <h1 class="title is-4 ml-3">
-                      <a
-                        href={`/CompletedFlipstarters/${slugify(campaign.title)}`}
-                        data-sveltekit-prefetch
-                      >
-                        <span class="icon"><i class="fas fa-fire mr-4"></i></span>
-                        {campaign.title.substring(0, 15)}
-                      </a>
-                    </h1>
-                    <p class="mt-1">
-                      <strong>
-                        <span class="icon"><i class="fas fa-coins"></i></span> Amount:
-                      </strong>
-                      {campaign.amount} BCH
-                    </p>
-
-                    <div class="container">
-                      <div class="mb-3">
+        {#if paginatedCampaigns.length === 0}
+          <div class="column">
+            <p>No campaigns available.</p>
+          </div>
+        {:else}
+          {#each paginatedCampaigns as campaign, index (campaign)}
+            {#if campaign.status === "success"}
+              <div class="column is-half">
+                <div class="card">
+                  <div class="card-content">
+                    <div class="content">
+                      <h1 class="title is-4 ml-3">
+                        <a
+                          href={prependBase(`/CompletedFlipstarters/${slugify(campaign.title)}`)}
+                          data-sveltekit-prefetch
+                        >
+                          <span class="icon"><i class="fas fa-fire mr-4"></i></span>
+                          {campaign.title.substring(0, 15)}
+                        </a>
+                      </h1>
+                      <p class="mt-1">
                         <strong>
-                          <span class="icon"><i class="fas fa-hashtag"></i></span> Index:
+                          <span class="icon"><i class="fas fa-coins"></i></span> Amount:
                         </strong>
-                        <span class="ml-2">{(currentPage - 1) * itemsPerPage + index + 1}</span>
+                        {campaign.amount} BCH
+                      </p>
+                      <div class="container">
+                        <div class="mb-3">
+                          <strong>
+                            <span class="icon"><i class="fas fa-hashtag"></i></span> Index:
+                          </strong>
+                          <span class="ml-2">{(currentPage - 1) * itemsPerPage + index + 1}</span>
+                        </div>
+                        <p class="mt-3">
+                          <strong>
+                            <span class="icon"><i class="fas fa-info-circle"></i></span> Status:
+                          </strong>
+                          <span class="ml-2">{campaign.status}</span>
+                        </p>
                       </div>
-                      <p class="mt-3">
+                      <p class="mt-4">
                         <strong>
-                          <span class="icon"><i class="fas fa-info-circle"></i></span> Status:
+                          <span class="icon"><i class="fas fa-handshake"></i></span> Transaction:
                         </strong>
-                        <span class="ml-2">{campaign.status}</span>
+                        <a
+                          href={`https://explorer.bitcoin.com/bch/tx/${campaign.tx}`}
+                          target="_blank"
+                        >
+                          Bitcoincash
+                        </a>
                       </p>
                     </div>
-                    
-
-                  
-                    <p class="mt-4">
-                      <strong>
-                        <span class="icon"><i class="fas fa-handshake"></i></span> Transaction:
-                      </strong>
-                      <a
-                        href={`https://explorer.bitcoin.com/bch/tx/${campaign.tx}`}
-                        target="_blank"
-                      >
-                        Bitcoincash
-                      </a>
-                    </p>
                   </div>
                 </div>
               </div>
-            </div>
-          {/if}
-        {/each}
+            {/if}
+          {/each}
+        {/if}
       </div>
-
       <!-- Pagination Controls -->
       <nav class="pagination is-centered" role="navigation" aria-label="pagination">
         <button
@@ -119,12 +128,10 @@
               1
             </button>
           </li>
-
           <!-- Ellipsis before current page if necessary -->
           {#if currentPage > 3}
             <li><span class="pagination-ellipsis">…</span></li>
           {/if}
-
           <!-- Page numbers around the current page -->
           {#each Array.from({ length: totalPages }, (_, i) => i + 1) as page (page)}
             {#if page > 1 && page < totalPages && page >= currentPage - 2 && page <= currentPage + 2}
@@ -138,12 +145,10 @@
               </li>
             {/if}
           {/each}
-
           <!-- Ellipsis after current page if necessary -->
           {#if currentPage < totalPages - 2}
             <li><span class="pagination-ellipsis">…</span></li>
           {/if}
-
           <!-- Last page button -->
           {#if totalPages > 1}
             <li>

@@ -45,14 +45,19 @@
               {campaign.status}
             </p>
             <p>
-              <strong
-                ><span class="icon"><i class="fas fa-handshake"></i></span> Transaction:</strong
-              >
+              <strong>
+                <span class="icon">
+                  <i class="fas fa-handshake"></i>
+                </span> Transaction:
+              </strong>
               <a
+                class="is-flex-wrap-wrap"
                 href={`https://explorer.bitcoin.com/bch/tx/${campaign.tx}`}
-                target="_blank">{campaign.tx}</a
-              >
+                target="_blank">
+                {campaign.tx}
+              </a>
             </p>
+            
             <p>
               <strong
                 ><span class="icon"><i class="fas fa-link"></i></span> URL:</strong
