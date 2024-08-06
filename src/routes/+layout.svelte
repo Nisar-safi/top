@@ -1,14 +1,22 @@
-<!-- src/routes/+layout.svelte -->
 <script>
   import "bulma/css/bulma.min.css";
   import "@fortawesome/fontawesome-free/css/all.min.css";
+  import { base } from "$app/paths";
+
+function prependBase(url) {
+  if (!url.startsWith('http') && !url.startsWith('https') && !url.startsWith(base)) {
+    return `${base}${url}`;
+  }
+  return url;
+}
+
 </script>
 
 <nav class="center">
-  <a href="/Flipstarters" class="button is-primary is-outlined">Flipstarters</a>
-  <a href="/ActiveFlipstarters" class="button is-link is-outlined">Active Flipstarters</a>
-  <a href="/CompletedFlipstarters" class="button is-success is-outlined">Completed Flipstarters</a>
-  <a href="/AboutThisPage" class="button is-info is-outlined">About This Page</a>
+  <a href={prependBase('/Flipstarters')} class="button is-primary is-outlined">Flipstarters</a>
+  <a href={prependBase('/ActiveFlipstarters')} class="button is-link is-outlined">Active Flipstarters</a>
+  <a href={prependBase('/CompletedFlipstarters')} class="button is-success is-outlined">Completed Flipstarters</a>
+  <a href={prependBase('/AboutThisPage')} class="button is-info is-outlined">About This Page</a>
 </nav>
 
 <slot></slot>
@@ -35,7 +43,6 @@
     .center {
       flex-direction: column;
       gap: 10px;
-   
       align-items: center;
       margin: auto;
       margin-top: 10px;

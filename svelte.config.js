@@ -1,7 +1,7 @@
 import sveltePreprocess from 'svelte-preprocess';
 import adapter from '@sveltejs/adapter-static';
 
-const dev = process.env.NODE_ENV === 'development';
+const isDev = process.env.NODE_ENV === 'development';
 
 export default {
   kit: {
@@ -12,7 +12,7 @@ export default {
       precompress: false
     }),
     paths: {
-      base: dev ? '' : '/dpractice'
+      base: isDev ? '' : '/dpractice' 
     }
   },
   preprocess: sveltePreprocess()
