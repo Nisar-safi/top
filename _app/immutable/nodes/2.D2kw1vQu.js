@@ -1,4 +1,4 @@
-import{s as K,n as L}from"../chunks/scheduler.Bmg8oFKD.js";import{S as Q,i as R,e as n,s as p,c as a,b as w,l as i,g as v,f as b,m as r,h as W,j as e,n as X}from"../chunks/index.gV_602PJ.js";import{g as Y}from"../chunks/entry.CP7iCMo5.js";function Z(D){let o,h,m,C,t,c,M="Flipstarters on Bitcoin Cash",H,x,B=`Flipstarter provides a way for any project to engage with potential
+import{s as K,n as L}from"../chunks/scheduler.Bmg8oFKD.js";import{S as Q,i as R,e as n,s as p,c as a,b as w,l as i,g as v,f as b,m as r,h as W,j as e,n as X}from"../chunks/index.gV_602PJ.js";import{g as Y}from"../chunks/entry.M1weUUAN.js";function Z(D){let o,h,m,C,t,c,M="Flipstarters on Bitcoin Cash",H,x,B=`Flipstarter provides a way for any project to engage with potential
             funders in a way that encourages accountability for projects and
             fairness for funders.`,I,g,F="This page keeps an overview of active and historical flipstarters.",j,_,q="Do you know of a flipstarter that is not listed here?",k,l,A="Submit a flipstarter",E,d,N=`<p>So far, <strong>134 projects</strong> have been successfully
               funded using flipstarter, receiving a total of
