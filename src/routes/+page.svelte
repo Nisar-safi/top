@@ -1,12 +1,10 @@
-
 <script>
-    import { goto } from '$app/navigation';
+  import { goto } from '$app/navigation';
 
-    function navigate() {
-        goto('/FormComponent');
-    }
+  function navigate() {
+    goto('/FormComponent');
+  }
 </script>
-
 
 <section class="section">
   <div class="columns is-centered">
@@ -23,9 +21,7 @@
             This page keeps an overview of active and historical flipstarters.
           </p>
           <p>Do you know of a flipstarter that is not listed here?</p>
-
- 
-          <button class="button is-primary mt-3" on:click={navigate}>Submit a flipstarter </button>
+          <button class="button is-primary mt-3" on:click={navigate}>Submit a flipstarter</button>
 
           <div class="mt-5">
             <p>
@@ -34,10 +30,13 @@
               <strong>15545.84 BCH</strong>.
             </p>
           </div>
+
           <div class="buttons mt-3">
-            <button class="button is-info mb-3">How to pledge</button>
-            <button class="button is-dark">Start a campaign</button>
+           <a href="https://flipstarter.cash/en/how-to-pledge"> <button class="button is-info mb-3">How to pledge</button></a>
+           
+          <a href="https://flipstarter.cash/en/how-to"><button class="button is-dark">Start a campaign</button></a>
           </div>
+
           <p class="mt-3">
             A flipstarter listing is not an endorsement. Always do your own
             research before pledging.

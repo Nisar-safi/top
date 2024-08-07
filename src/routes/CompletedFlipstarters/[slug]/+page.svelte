@@ -38,7 +38,7 @@
                 >
               {/each}
             </div>
-            <p>
+            <p class="mt-2">
               <strong
                 ><span class="icon"><i class="fas fa-info-circle"></i></span> Status:</strong
               >

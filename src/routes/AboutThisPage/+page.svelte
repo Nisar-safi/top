@@ -1,45 +1,30 @@
 <script>
-    // You can add any necessary script here if needed
-  </script>
-  
-  <div class="columns is-centered mt-6">
-    <div class="column is-two-thirds-tablet is-half-desktop center-text">
-      <div class="content">
-        <h1>About Flipstarters on Bitcoin Cash
-            
-        </h1>
-        <p>
-          This website was created by and is maintained by <a
-            href="https://twitter.com/dagur">@dagur</a
-          >. This page keeps an overview of active and historical flipstarters.
-          Due to the decentralized nature of Flipstarter, this is a manual task.
-        </p>
-        <p>
-          This website has been improved with contributions from <a
-            href="https://twitter.com/kharri1073">@kharri1073</a
-          >.
-        </p>
-        <p>
-          <a href="https://github.com/sanchaz/flipstarter-directory-backend"
-            >Flipstarter Directory Backend</a
-          >
-          by sanchaz.
-          <a href="https://twitter.com/flipstarter">Twitter</a>
-          <a href="https://reddit.com/r/flipstarter">Reddit</a>
-        </p>
-        <p>
-          This website, including the flipstarter data collected, is licensed
-          under GNU AFFERO GENERAL PUBLIC LICENSE Version 3 (AGPLv3). Source code
-          is available on <a
-            href="https://gitlab.com/flipstarter/flipstarter-directory">GitLab</a
-          >.
-        </p>
-      </div>
+  // You can add any necessary script here if needed
+</script>
+
+<div class="columns is-centered mt-6">
+  <div class="column is-two-thirds-tablet is-half-desktop">
+    <div class="content has-text-centered">
+      <h1 class="title is-3 mb-4">About This Project</h1>
+      <p class="mb-4">
+        This project provides an overview of active and historical Flipstarters, curated through a manual process due to the decentralized nature of Flipstarter. It is built using SvelteKit by Nisar and was directed and financed by @damascene <a href="https://gitlab.com/uak/" class="has-text-link">GitLab</a>.
+      </p>
+      <p class="mb-4">
+        It uses the <a href="https://gitlab.com/dagurval/flipstarter-directory-backend" class="has-text-link">Flipstarter Directory Backend</a> for campaign data. The concept is copied from the original deployment and enhanced to add campaign-specific pages and use static pages.
+      </p>
+      <p>
+        This website, along with the collected Flipstarter data, is licensed under the GNU AFFERO GENERAL PUBLIC LICENSE Version 3 (AGPLv3). The source code is available on <a href="https://codeberg.org/Half_Engineer" class="has-text-link">Codeberg</a>.
+      </p>
     </div>
   </div>
-  
-  <style>
-    .center-text {
-      text-align: center;
-    }
-  </style>
+</div>
+
+<style>
+  .has-text-link {
+    color: #3273dc;
+  }
+
+  .has-text-link:hover {
+    text-decoration: underline;
+  }
+</style>

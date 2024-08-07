@@ -90,17 +90,24 @@
                           <span class="ml-2">{campaign.status}</span>
                         </p>
                       </div>
-                      <p class="mt-4">
-                        <strong>
-                          <span class="icon"><i class="fas fa-handshake"></i></span> Transaction:
-                        </strong>
-                        <a
-                          href={`https://explorer.bitcoin.com/bch/tx/${campaign.tx}`}
-                          target="_blank"
-                        >
-                          Bitcoincash
-                        </a>
-                      </p>
+                      
+
+                      
+            <div class="is-flex mt-3">
+              <div>
+                <strong
+                  ><span class="icon"><i class="fas fa-archive"></i></span
+                  >Archive:</strong
+                >
+              </div>
+              {#each campaign.archive as archiv, index (archiv)}
+                <a href={archiv} class="is-link ml-2" target="_blank">
+                  #{index +1}
+                </a>
+              {/each}
+            </div>
+          
+                      
                     </div>
                   </div>
                 </div>
